@@ -1,0 +1,26 @@
+{
+    "name": "cyber-duck/restrouter",
+    "description": "",
+    "authors": [
+        {
+            "name": "Mark Garratt",
+            "email": "mgarratt@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "4.1.*",
+      "mockery/mockery": "~0.9",
+      "illuminate/routing": "4.2.*",
+      "illuminate/events": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "CyberDuck\\RestRouter": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
