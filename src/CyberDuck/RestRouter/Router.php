@@ -103,7 +103,7 @@ class Router extends LaravelRouter
      */
     protected function getRestUri($model)
     {
-        return '/{' . $model . '?}/{_path?}';
+        return '/{' . $model . '}/{_path?}';
     }
 
     /**
