@@ -43,7 +43,7 @@ This is will register the following routes:
 | DELETE resource-name/{ResourceModel}/{_path?}           | resource.destroy | ResourceController@destroy       |
 | GET|HEAD|POST|PUT|PATCH|DELETE resource-name/{_missing} |                  | ResourceController@missingMethod |
 
-``{_path}`` will capture the remainder of the path after the matching the first
+``{_path}`` will capture the remainder of the path after matching the first
 part.  The controller is also RESTful if you need to add any additional routes.
 
 Options include model, except and only and work the same as ``resource()``
