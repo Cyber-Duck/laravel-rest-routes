@@ -63,8 +63,9 @@ class Router extends LaravelRouter
             $name = str_replace('/', '.', $uri);
 
             if (isset($options['model'])) {
+                $modelName = $this->getSafeModelName($options['model']);
                 // Register the model so it's autoloaded and passed to the controller
-                $this->model($options['model'], $options['model']);
+                $this->model($modelName, $options['model']);
             } else {
                 // Grab an ID instead of a model instance
                 $options['model'] = 'id';
@@ -80,6 +81,18 @@ class Router extends LaravelRouter
             // Register RESTful controller for any additional routes
             $this->controller('/', $controller);
         });
+    }
+
+    /**
+     * Remove all spaces and slashes from $modelName for use in routes.
+     *
+     * @param $modelName
+     *
+     * @return string
+     */
+    protected function getSafeModelName($modelName)
+    {
+        return str_replace(['\\', ' '], '_', strtolower($modelName));
     }
 
     /**
@@ -103,7 +116,7 @@ class Router extends LaravelRouter
      */
     protected function getRestUri($model)
     {
-        return '/{' . $model . '}/{_path?}';
+        return '/{' . $this->getSafeModelName($model) . '}/{_path?}';
     }
 
     /**

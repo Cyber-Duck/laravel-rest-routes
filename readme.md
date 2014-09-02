@@ -29,7 +29,7 @@ Example Usage
 
     <?php
     $options = ['model' => 'ResourceModel'];
-    Route::rest('resource-name', 'ResourceController', ['model' => 'ResourceModel']);
+    Route::rest('resource-name', 'ResourceController', ['model' => 'Models\Resource']);
 
 This is will register the following routes:
 
@@ -37,10 +37,10 @@ This is will register the following routes:
 |---------------------------------------------------------|------------------|----------------------------------|
 | GET|HEAD resource-name                                  | resource.index   | ResourceController@index         |
 | POST resource-name                                      | resource.store   | ResourceController@store         |
-| GET|HEAD resource-name/{ResourceModel}/{_path?}         | resource.show    | ResourceController@show          |
-| PUT resource-name/{ResourceModel}/{_path?}              | resource.replace | ResourceController@replace       |
-| PATCH resource-name/{ResourceModel}/{_path?}            | resource.update  | ResourceController@update        |
-| DELETE resource-name/{ResourceModel}/{_path?}           | resource.destroy | ResourceController@destroy       |
+| GET|HEAD resource-name/{models_resource}/{_path?}       | resource.show    | ResourceController@show          |
+| PUT resource-name/{models_resource}/{_path?}            | resource.replace | ResourceController@replace       |
+| PATCH resource-name/{models_resource}/{_path?}          | resource.update  | ResourceController@update        |
+| DELETE resource-name/{models_resource}/{_path?}         | resource.destroy | ResourceController@destroy       |
 | GET|HEAD|POST|PUT|PATCH|DELETE resource-name/{_missing} |                  | ResourceController@missingMethod |
 
 ``{_path}`` will capture the remainder of the path after matching the first
