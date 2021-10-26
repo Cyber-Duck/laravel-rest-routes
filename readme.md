@@ -1,3 +1,6 @@
+# 🚨 Discontinued 🚨
+This functionality is redily available in later versions of Laravel using Route::resource().
+
 Laravel REST Routes
 ===================
 
